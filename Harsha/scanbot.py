@@ -3,24 +3,6 @@ from Bittrex import *
 from coinClass import *
 
 ###########################################################
-# Global Initializations
-###########################################################
-#generate new API key/secret from Bittrex and put them here
-bkey = ""
-bskey= ""
-
-# put in your telegram chat id from @get_id_bot
-TG_ID = ""
-
-# put in the telegram bot token from @BotFather
-TG_BOT_TOKEN = ""
-
-#initialize the telegram BOT and Bittrex
-testapi = Bittrex(bkey, bskey)
-bot = telegram.Bot(token=TG_BOT_TOKEN)
-
-
-###########################################################
 # Scan Bot
 ###########################################################
 # List of all the coins
