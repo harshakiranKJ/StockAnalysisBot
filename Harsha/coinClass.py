@@ -9,10 +9,10 @@ bkey = ""
 bskey= ""
 
 # put in your telegram chat id from @get_id_bot
-TG_ID = "454903405"
+TG_ID = ""
 
 # put in the telegram bot token from @BotFather
-TG_BOT_TOKEN = "477814364:AAGWlwRFp9LR77M8QmByyrhUeVBrSH4KW7w"
+TG_BOT_TOKEN = ""
 
 
 
