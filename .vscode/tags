@@ -1,0 +1,113 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCOUNT_SET	../Bittrex.py	/^ACCOUNT_SET = ['getbalances', 'getbalance', 'getdepositaddress', 'withdraw', 'getorder', 'getorderhistory', 'getwithdrawalhistory', 'getdeposithistory']$/;"	kind:variable	line:53
+Analyze	../scanbot.py	/^Analyze=['BTC-XLM']$/;"	kind:variable	line:57
+BOLD	../coinClass.py	/^    BOLD = '\\033[1m'$/;"	kind:variable	line:116
+BOTH_ORDERBOOK	../Bittrex.py	/^BOTH_ORDERBOOK = 'both'$/;"	kind:variable	line:46
+BUY_ORDERBOOK	../Bittrex.py	/^BUY_ORDERBOOK = 'buy'$/;"	kind:variable	line:44
+Bittrex	../Bittrex.py	/^class Bittrex(object):$/;"	kind:class	line:56
+Bittrex.py	../Bittrex.py	1;"	kind:file	line:1
+ENDC	../coinClass.py	/^    ENDC = '\\033[0m'$/;"	kind:variable	line:115
+FAIL	../coinClass.py	/^    FAIL = '\\033[91m'$/;"	kind:variable	line:114
+HEADER	../coinClass.py	/^    HEADER = '\\033[95m'$/;"	kind:variable	line:110
+HTTPError	../Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
+MARKET_SET	../Bittrex.py	/^MARKET_SET = ['getopenorders', 'cancel', 'sellmarket', 'selllimit', 'buymarket', 'buylimit']$/;"	kind:variable	line:51
+OKBLUE	../coinClass.py	/^    OKBLUE = '\\033[94m'$/;"	kind:variable	line:111
+OKGREEN	../coinClass.py	/^    OKGREEN = '\\033[92m'$/;"	kind:variable	line:112
+PUBLIC_SET	../Bittrex.py	/^PUBLIC_SET = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummary', 'getmarketsummaries', 'getorderbook',$/;"	kind:variable	line:48
+Request	../Bittrex.py	/^    from urllib.request import urlopen, Request$/;"	kind:namespace	line:36
+Request	../Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
+SELL_ORDERBOOK	../Bittrex.py	/^SELL_ORDERBOOK = 'sell'$/;"	kind:variable	line:45
+TG_BOT_TOKEN	../coinClass.py	/^TG_BOT_TOKEN = ""$/;"	kind:variable	line:15
+TG_BOT_TOKEN	../scanbot.py	/^TG_BOT_TOKEN = "477814364:AAGWlwRFp9LR77M8QmByyrhUeVBrSH4KW7w"$/;"	kind:variable	line:16
+TG_ID	../coinClass.py	/^TG_ID = ""$/;"	kind:variable	line:12
+TG_ID	../scanbot.py	/^TG_ID = "454903405"$/;"	kind:variable	line:13
+UNDERLINE	../coinClass.py	/^    UNDERLINE = '\\033[4m'$/;"	kind:variable	line:117
+URLError	../Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
+WARNING	../coinClass.py	/^    WARNING = '\\033[93m'$/;"	kind:variable	line:113
+__init__	../Bittrex.py	/^    def __init__(self, api_key, api_secret):$/;"	kind:member	line:58
+__init__	../coinClass.py	/^    def __init__(self,coin,coinCollection):$/;"	kind:member	line:56
+__init__	../coinClass.py	/^   def __init__(self, name,db):$/;"	kind:member	line:30
+analyze	../scanbot.py	/^            analyze = coinAnalyze(x,coinCollection)$/;"	kind:variable	line:63
+api_query	../Bittrex.py	/^    def api_query(self, method, options=None):$/;"	kind:member	line:65
+bcolors	../coinClass.py	/^class bcolors:$/;"	kind:class	line:109
+bkey	../coinClass.py	/^bkey = ""$/;"	kind:variable	line:8
+bkey	../scanbot.py	/^bkey = ""$/;"	kind:variable	line:9
+bot	../coinClass.py	/^bot = telegram.Bot(token=TG_BOT_TOKEN)$/;"	kind:variable	line:20
+bot	../scanbot.py	/^bot = telegram.Bot(token=TG_BOT_TOKEN)$/;"	kind:variable	line:20
+bskey	../coinClass.py	/^bskey= ""$/;"	kind:variable	line:9
+bskey	../scanbot.py	/^bskey= ""$/;"	kind:variable	line:10
+buy_limit	../Bittrex.py	/^    def buy_limit(self, market, quantity, rate):$/;"	kind:member	line:122
+buy_market	../Bittrex.py	/^    def buy_market(self, market, quantity, rate):$/;"	kind:member	line:119
+calChangeDict	../coinClass.py	/^    calChangeDict = {"change1min":{"previous":0},"change2min":{"previous":0},"change5min":{"previous":0},"change30min":{"previous":0},"change60min":{"previous":0}}$/;"	kind:variable	line:54
+calendar	../Bittrex.py	/^import calendar$/;"	kind:namespace	line:25
+cancel	../Bittrex.py	/^    def cancel(self, uuid):$/;"	kind:member	line:131
+change_1min	../coinClass.py	/^    def change_1min(self):$/;"	kind:member	line:60
+change_2min	../coinClass.py	/^    def change_2min(self):$/;"	kind:member	line:63
+change_30min	../coinClass.py	/^    def change_30min(self):$/;"	kind:member	line:69
+change_5min	../coinClass.py	/^    def change_5min(self):$/;"	kind:member	line:66
+change_60min	../coinClass.py	/^    def change_60min(self):$/;"	kind:member	line:72
+coinAnalyze	../coinClass.py	/^class coinAnalyze():$/;"	kind:class	line:52
+coinClass.py	../coinClass.py	1;"	kind:file	line:1
+coinCollection	../scanbot.py	/^coinCollection = {}$/;"	kind:variable	line:30
+coinList	../scanbot.py	/^coinList = []$/;"	kind:variable	line:27
+coinThread	../coinClass.py	/^class coinThread (threading.Thread):$/;"	kind:class	line:29
+collections	../Bittrex.py	/^import collections$/;"	kind:namespace	line:30
+count	../scanbot.py	/^        count = count +1$/;"	kind:variable	line:40
+count	../scanbot.py	/^count = 0$/;"	kind:variable	line:36
+currencySummary	../scanbot.py	/^currencySummary = testapi.get_market_summaries()$/;"	kind:variable	line:33
+datetime	../Bittrex.py	/^import datetime$/;"	kind:namespace	line:24
+datetime	../Bittrex.py	/^import time, datetime$/;"	kind:namespace	line:23
+depends	../Bittrex.py	/^depends = ['requests', 'python-telegram-bot']$/;"	kind:variable	line:7
+do_print	../coinClass.py	/^def do_print(value,num):$/;"	kind:function	line:119
+findChange	../coinClass.py	/^    def findChange(self,duration):$/;"	kind:member	line:75
+get_balance	../Bittrex.py	/^    def get_balance(self, currency):$/;"	kind:member	line:143
+get_balances	../Bittrex.py	/^    def get_balances(self):$/;"	kind:member	line:140
+get_change	../coinClass.py	/^def get_change(current, previous):$/;"	kind:function	line:133
+get_currencies	../Bittrex.py	/^    def get_currencies(self):$/;"	kind:member	line:101
+get_deposit_address	../Bittrex.py	/^    def get_deposit_address(self, currency):$/;"	kind:member	line:146
+get_deposit_history	../Bittrex.py	/^    def get_deposit_history(self, currency=""):$/;"	kind:member	line:152
+get_market_history	../Bittrex.py	/^    def get_market_history(self, market, count):$/;"	kind:member	line:116
+get_market_summaries	../Bittrex.py	/^    def get_market_summaries(self):$/;"	kind:member	line:107
+get_market_summary	../Bittrex.py	/^    def get_market_summary(self, market):$/;"	kind:member	line:110
+get_markets	../Bittrex.py	/^    def get_markets(self):$/;"	kind:member	line:98
+get_open_orders	../Bittrex.py	/^    def get_open_orders(self):$/;"	kind:member	line:137
+get_open_orders	../Bittrex.py	/^    def get_open_orders(self, market):$/;"	kind:member	line:134
+get_order	../Bittrex.py	/^    def get_order(self, uuid):$/;"	kind:member	line:149
+get_order_history	../Bittrex.py	/^    def get_order_history(self, market = ""):$/;"	kind:member	line:164
+get_orderbook	../Bittrex.py	/^    def get_orderbook(self, market, depth_type, depth=20):$/;"	kind:member	line:113
+get_ticker	../Bittrex.py	/^    def get_ticker(self, market):$/;"	kind:member	line:104
+get_withdrawal_history	../Bittrex.py	/^    def get_withdrawal_history(self, currency=""):$/;"	kind:member	line:158
+hashlib	../Bittrex.py	/^import hmac, hashlib$/;"	kind:namespace	line:26
+hmac	../Bittrex.py	/^import hmac, hashlib$/;"	kind:namespace	line:26
+httplib	../Bittrex.py	/^import httplib$/;"	kind:namespace	line:27
+imp	../Bittrex.py	/^import imp, pip$/;"	kind:namespace	line:3
+install	../Bittrex.py	/^def install(package):$/;"	kind:function	line:4
+json	../Bittrex.py	/^import json$/;"	kind:namespace	line:22
+market	../scanbot.py	/^    market = '{0}{1}'.format(coin, '_col')$/;"	kind:variable	line:44
+os	../Bittrex.py	/^import os$/;"	kind:namespace	line:17
+pd	../Bittrex.py	/^import pandas as pd$/;"	kind:namespace	line:32
+pip	../Bittrex.py	/^import imp, pip$/;"	kind:namespace	line:3
+requests	../Bittrex.py	/^import requests$/;"	kind:namespace	line:28
+run	../coinClass.py	/^   def run(self):$/;"	kind:member	line:35
+scanbot.py	../scanbot.py	1;"	kind:file	line:1
+sell_limit	../Bittrex.py	/^    def sell_limit(self, market, quantity, rate):$/;"	kind:member	line:128
+sell_market	../Bittrex.py	/^    def sell_market(self, market, quantity, rate):$/;"	kind:member	line:125
+signal	../Bittrex.py	/^import signal$/;"	kind:namespace	line:31
+sys	../Bittrex.py	/^import sys$/;"	kind:namespace	line:19
+tName	../Bittrex.py	/^import pandas as tName$/;"	kind:namespace	line:29
+telegram	../Bittrex.py	/^import telegram$/;"	kind:namespace	line:20
+testapi	../coinClass.py	/^testapi = Bittrex(bkey, bskey)$/;"	kind:variable	line:19
+testapi	../scanbot.py	/^testapi = Bittrex(bkey, bskey)$/;"	kind:variable	line:19
+thread	../scanbot.py	/^	thread = coinThread(coin,coinCollection['{0}{1}'.format(coin, '_col')])$/;"	kind:variable	line:49
+threading	../Bittrex.py	/^import threading$/;"	kind:namespace	line:16
+time	../Bittrex.py	/^import time$/;"	kind:namespace	line:21
+time	../Bittrex.py	/^import time, datetime$/;"	kind:namespace	line:23
+urlencode	../Bittrex.py	/^    from urllib import urlencode$/;"	kind:namespace	line:41
+urlencode	../Bittrex.py	/^    from urllib.parse import urlencode$/;"	kind:namespace	line:37
+urlopen	../Bittrex.py	/^    from urllib.request import urlopen, Request$/;"	kind:namespace	line:36
+urlopen	../Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
