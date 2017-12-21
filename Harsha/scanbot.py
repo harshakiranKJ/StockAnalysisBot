@@ -21,10 +21,10 @@ for res in currencySummary['result']:
 	    coinList.append(res['MarketName'])
         count = count +1
 
-# Create Databases to store the jsons poll every 60 sec and store max of 6 hrs
+# Create Databases to store the jsons poll every 60 sec and store max of 10 hrs
 for coin in coinList:
     market = '{0}{1}'.format(coin, '_col')
-    coinCollection[market] = collections.deque(360*[0],360)
+    coinCollection[market] = collections.deque(600*[0],600)
 
 #for each item in the coinlist start a thread and open the file and read values of individual coins
 for coin in coinList:
@@ -36,6 +36,7 @@ for coin in coinList:
 ###########################################################
 
 #Test for a coin
+'''
 Analyze=['BTC-XLM']
 
 try:
@@ -52,3 +53,23 @@ try:
 except KeyboardInterrupt:
     print "ctrl+ c pressed"
     exit(0)
+'''
+
+###########################################################
+# Testing for continous mean increases
+###########################################################
+
+try:
+    while (True):
+        time.sleep(43)
+        for coin in coinList:
+            analyze = coinAnalyze(coin,coinCollection)
+            analyze.ascendingMean(30)
+            analyze.ascendingMean(60)
+            analyze.ascendingMean(180)
+    	
+
+except KeyboardInterrupt:
+    print "ctrl+ c pressed"
+    exit(0)
+    

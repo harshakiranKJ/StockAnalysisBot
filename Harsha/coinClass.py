@@ -1,5 +1,5 @@
 from Bittrex import *
-
+import numpy as np
 
 ###########################################################
 # Global Initializations
@@ -36,12 +36,44 @@ class coinThread (threading.Thread):
    def run(self):
         try:
             while (True):
-                coinData = testapi.get_market_summary(self.name)
-                self.db.appendleft(coinData['result'][0])
+                # Create local storage for recursive data
+                localCollection = []
+                stop = time.time() + 55      # 55 seconds for gathering data
+
+                while (time.time() < stop):
+                    data = testapi.get_market_summary(self.name)
+                    if (data['success'] == True):
+                        localCollection.append(data['result'][0])
+                    time.sleep(5)
+
+                #calculate average of each value based on the counter
+                coldata = pd.DataFrame.from_dict(localCollection) 
+                coldata = coldata.mean()
+                coldata = coldata.to_dict()
+
+                # push the mean value to the database
+                self.db.appendleft(coldata)
                 time.sleep(60)
         except KeyboardInterrupt:
             print "ctrl+ c pressed"
             threading.Thread._Thread_stop()
+
+
+###########################################################
+# Global Helper Functions
+#
+#
+###########################################################
+
+# run multithreads for the count of number of currencies
+def get_change(current, previous):
+    if current == previous:
+        return 0
+    try:
+        return (current - previous)
+    except ZeroDivisionError:
+        return 0
+
 
 
 
@@ -101,6 +133,31 @@ class coinAnalyze():
         except KeyboardInterrupt:
                 print "ctrl+ c pressed"
                 exit(0)
+
+    def ascendingMean(self,duration):
+        try:
+            #format and fetch Data
+            market = '{0}{1}'.format(self.coin, '_col')             # Get the coin (BTC-XRP)
+            val = self.coinCollection[market]                       # Get the required database
+            data = [elem for elem in val if elem !=0]               # format to remove zeros
+            if (len(data) <= 3 * duration):                             # return if not enough data is available
+                return
+            coldata = pd.DataFrame.from_dict(data)                  # Store the data in a python pandas dataframe
+
+            # Calculate ascending means from start till the duration mentioned
+            mean1 = np.mean(coldata['Last'][0:duration])
+            mean2 = np.mean(coldata['Last'][duration:2*duration])
+            mean3 = np.mean(coldata['Last'][2*duration:3*duration])
+
+            if ((mean1 > mean2) and (mean2 > mean3)):
+                print "BUY SIGNAL " + market
+                bot.send_message(chat_id=TG_ID, text="<b>BITTREX: BUY SIGNAL</b>"+' '.join(self.coin + " mean increased by"  + str(duration) + "minutes"), parse_mode=telegram.ParseMode.HTML)
+
+        except KeyboardInterrupt:
+                print "ctrl+ c pressed"
+                exit(0)
+
+
 
 ###########################################################
 # Generic helper functions

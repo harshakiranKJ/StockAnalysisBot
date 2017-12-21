@@ -4,7 +4,7 @@ import imp, pip
 def install(package):
 	pip.main(["install", package])
 	
-depends = ['requests', 'python-telegram-bot']
+depends = ['requests', 'python-telegram-bot','pandas']
 for i in depends:
 	try:
 		imp.find_module(i)
