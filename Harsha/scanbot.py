@@ -58,10 +58,9 @@ except KeyboardInterrupt:
 ###########################################################
 # Testing for continous mean increases
 ###########################################################
-
 try:
     while (True):
-        time.sleep(43)
+        time.sleep(47)
         for coin in coinList:
             analyze = coinAnalyze(coin,coinCollection)
             analyze.ascendingMean(30)

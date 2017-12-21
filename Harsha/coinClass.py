@@ -8,7 +8,6 @@ import numpy as np
 bkey = ""
 bskey= ""
 
-# put in your telegram chat id from @get_id_bot
 TG_ID = ""
 
 # put in the telegram bot token from @BotFather
@@ -36,15 +35,29 @@ class coinThread (threading.Thread):
    def run(self):
         try:
             while (True):
-                # Create local storage for recursive data
+                                # Create local storage for recursive data
                 localCollection = []
-                stop = time.time() + 55      # 55 seconds for gathering data
 
+                start = time.time()
+                stop = start + 33     # 47 seconds for gathering data
+                scounter = 0
+                fcounter = 0
                 while (time.time() < stop):
+                    #print "Thread COLLECTION START Time: " + str(time.ctime())
                     data = testapi.get_market_summary(self.name)
                     if (data['success'] == True):
                         localCollection.append(data['result'][0])
-                    time.sleep(5)
+                        scounter = scounter +1
+                    else:
+                        fcounter = fcounter +1
+                    
+                    #print "coin : " + self.name
+                    #print "now time : " +str(time.time())
+                    #print "stop time: " + str(stop)  
+                    time.sleep(10)
+
+               # print "scounter : " + str(scounter)
+               # print "fcounter : " + str(fcounter)
 
                 #calculate average of each value based on the counter
                 coldata = pd.DataFrame.from_dict(localCollection) 
@@ -53,7 +66,9 @@ class coinThread (threading.Thread):
 
                 # push the mean value to the database
                 self.db.appendleft(coldata)
-                time.sleep(60)
+                #print "Thread COLLECTION STOP Time: " + str(time.ctime())
+                deltasleep = time.time() - start
+                time.sleep(60 - deltasleep)
         except KeyboardInterrupt:
             print "ctrl+ c pressed"
             threading.Thread._Thread_stop()
@@ -136,11 +151,16 @@ class coinAnalyze():
 
     def ascendingMean(self,duration):
         try:
+
+            #print "Thread ANALYZE start Time: " + str(time.ctime())
+
             #format and fetch Data
             market = '{0}{1}'.format(self.coin, '_col')             # Get the coin (BTC-XRP)
             val = self.coinCollection[market]                       # Get the required database
             data = [elem for elem in val if elem !=0]               # format to remove zeros
+            #print data
             if (len(data) <= 3 * duration):                             # return if not enough data is available
+                print "Not enough data!!" + str(duration)
                 return
             coldata = pd.DataFrame.from_dict(data)                  # Store the data in a python pandas dataframe
 
@@ -148,6 +168,11 @@ class coinAnalyze():
             mean1 = np.mean(coldata['Last'][0:duration])
             mean2 = np.mean(coldata['Last'][duration:2*duration])
             mean3 = np.mean(coldata['Last'][2*duration:3*duration])
+
+            #print "mean1: " + str(mean1)
+            #print "mean1: " + str(mean1)
+            #print "mean1: " + str(mean1)
+            #print val
 
             if ((mean1 > mean2) and (mean2 > mean3)):
                 print "BUY SIGNAL " + market
