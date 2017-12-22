@@ -4,106 +4,186 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ACCOUNT_SET	../Harsha/Bittrex.py	/^ACCOUNT_SET = ['getbalances', 'getbalance', 'getdepositaddress', 'withdraw', 'getorder', 'getorderhistory', 'getwithdrawalhistory', 'getdeposithistory']$/;"	kind:variable	line:53
-BOLD	../Harsha/coinClass.py	/^    BOLD = '\\033[1m'$/;"	kind:variable	line:174
-BOTH_ORDERBOOK	../Harsha/Bittrex.py	/^BOTH_ORDERBOOK = 'both'$/;"	kind:variable	line:46
-BUY_ORDERBOOK	../Harsha/Bittrex.py	/^BUY_ORDERBOOK = 'buy'$/;"	kind:variable	line:44
-Bittrex	../Harsha/Bittrex.py	/^class Bittrex(object):$/;"	kind:class	line:56
+BOLD	../Harsha/coinClass.py	/^    BOLD = '\\033[1m'$/;"	kind:variable	line:271
+Bittrex	../Harsha/Bittrex.py	/^class Bittrex(object):$/;"	kind:class	line:53
+Bittrex	../Harsha/bittrex_v2/__init__.py	/^from .bittrex import (Bittrex, BittrexError,$/;"	kind:namespace	line:10
+Bittrex	../Harsha/bittrex_v2/bittrex.py	/^class Bittrex(object):$/;"	kind:class	line:52
+Bittrex	../Harsha/bittrex_v2/tests/tests.py	/^from bittrex_v2 import Bittrex, BittrexError$/;"	kind:namespace	line:5
+Bittrex	../Harsha/scanbot.py	/^from bittrex_v2 import Bittrex$/;"	kind:namespace	line:2
 Bittrex.py	../Harsha/Bittrex.py	1;"	kind:file	line:1
-ENDC	../Harsha/coinClass.py	/^    ENDC = '\\033[0m'$/;"	kind:variable	line:173
-FAIL	../Harsha/coinClass.py	/^    FAIL = '\\033[91m'$/;"	kind:variable	line:172
-HEADER	../Harsha/coinClass.py	/^    HEADER = '\\033[95m'$/;"	kind:variable	line:168
-HTTPError	../Harsha/Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
-MARKET_SET	../Harsha/Bittrex.py	/^MARKET_SET = ['getopenorders', 'cancel', 'sellmarket', 'selllimit', 'buymarket', 'buylimit']$/;"	kind:variable	line:51
-OKBLUE	../Harsha/coinClass.py	/^    OKBLUE = '\\033[94m'$/;"	kind:variable	line:169
-OKGREEN	../Harsha/coinClass.py	/^    OKGREEN = '\\033[92m'$/;"	kind:variable	line:170
-PUBLIC_SET	../Harsha/Bittrex.py	/^PUBLIC_SET = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummary', 'getmarketsummaries', 'getorderbook',$/;"	kind:variable	line:48
-Request	../Harsha/Bittrex.py	/^    from urllib.request import urlopen, Request$/;"	kind:namespace	line:36
-Request	../Harsha/Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
-SELL_ORDERBOOK	../Harsha/Bittrex.py	/^SELL_ORDERBOOK = 'sell'$/;"	kind:variable	line:45
-TG_BOT_TOKEN	../Harsha/coinClass.py	/^TG_BOT_TOKEN = ""$/;"	kind:variable	line:15
-TG_ID	../Harsha/coinClass.py	/^TG_ID = ""$/;"	kind:variable	line:12
-UNDERLINE	../Harsha/coinClass.py	/^    UNDERLINE = '\\033[4m'$/;"	kind:variable	line:175
-URLError	../Harsha/Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
-WARNING	../Harsha/coinClass.py	/^    WARNING = '\\033[93m'$/;"	kind:variable	line:171
-__init__	../Harsha/Bittrex.py	/^    def __init__(self, api_key, api_secret):$/;"	kind:member	line:58
-__init__	../Harsha/coinClass.py	/^    def __init__(self,coin,coinCollection):$/;"	kind:member	line:89
-__init__	../Harsha/coinClass.py	/^   def __init__(self, name,db):$/;"	kind:member	line:31
-analyze	../Harsha/scanbot.py	/^            analyze = coinAnalyze(coin,coinCollection)$/;"	kind:variable	line:66
-api_query	../Harsha/Bittrex.py	/^    def api_query(self, method, options=None):$/;"	kind:member	line:65
-ascendingMean	../Harsha/coinClass.py	/^    def ascendingMean(self,duration):$/;"	kind:member	line:137
-bcolors	../Harsha/coinClass.py	/^class bcolors:$/;"	kind:class	line:167
-bkey	../Harsha/coinClass.py	/^bkey = ""$/;"	kind:variable	line:8
-bot	../Harsha/coinClass.py	/^bot = telegram.Bot(token=TG_BOT_TOKEN)$/;"	kind:variable	line:21
-bskey	../Harsha/coinClass.py	/^bskey= ""$/;"	kind:variable	line:9
-buy_limit	../Harsha/Bittrex.py	/^    def buy_limit(self, market, quantity, rate):$/;"	kind:member	line:122
-buy_market	../Harsha/Bittrex.py	/^    def buy_market(self, market, quantity, rate):$/;"	kind:member	line:119
-calChangeDict	../Harsha/coinClass.py	/^    calChangeDict = {"change1min":{"previous":0},"change2min":{"previous":0},"change5min":{"previous":0},"change30min":{"previous":0},"change60min":{"previous":0}}$/;"	kind:variable	line:87
-calendar	../Harsha/Bittrex.py	/^import calendar$/;"	kind:namespace	line:25
-cancel	../Harsha/Bittrex.py	/^    def cancel(self, uuid):$/;"	kind:member	line:131
-change_1min	../Harsha/coinClass.py	/^    def change_1min(self):$/;"	kind:member	line:93
-change_2min	../Harsha/coinClass.py	/^    def change_2min(self):$/;"	kind:member	line:96
-change_30min	../Harsha/coinClass.py	/^    def change_30min(self):$/;"	kind:member	line:102
-change_5min	../Harsha/coinClass.py	/^    def change_5min(self):$/;"	kind:member	line:99
-change_60min	../Harsha/coinClass.py	/^    def change_60min(self):$/;"	kind:member	line:105
-coinAnalyze	../Harsha/coinClass.py	/^class coinAnalyze():$/;"	kind:class	line:85
+BittrexError	../Harsha/Bittrex.py	/^class BittrexError(Exception):$/;"	kind:class	line:45
+BittrexError	../Harsha/bittrex_v2/__init__.py	/^from .bittrex import (Bittrex, BittrexError,$/;"	kind:namespace	line:10
+BittrexError	../Harsha/bittrex_v2/bittrex.py	/^class BittrexError(Exception):$/;"	kind:class	line:44
+BittrexError	../Harsha/bittrex_v2/tests/tests.py	/^from bittrex_v2 import Bittrex, BittrexError$/;"	kind:namespace	line:5
+COIN	../Harsha/bittrex_v2/tests/tests.py	/^    COIN = 'BTC'$/;"	kind:variable	line:27
+ConfigTest	../Harsha/bittrex_v2/tests/tests.py	/^class ConfigTest:$/;"	kind:class	line:15
+ConnectionError	../Harsha/Bittrex.py	/^        from requests.exceptions import ReadTimeout, ConnectionError$/;"	kind:namespace	line:120
+ConnectionError	../Harsha/bittrex_v2/bittrex.py	/^        from requests.exceptions import ReadTimeout, ConnectionError$/;"	kind:namespace	line:119
+Decimal	../Harsha/Bittrex.py	/^from decimal import Decimal$/;"	kind:namespace	line:7
+Decimal	../Harsha/bittrex_v2/bittrex.py	/^from decimal import Decimal$/;"	kind:namespace	line:6
+Decimal	../Harsha/bittrex_v2/tests/tests.py	/^from decimal import Decimal$/;"	kind:namespace	line:6
+ENDC	../Harsha/coinClass.py	/^    ENDC = '\\033[0m'$/;"	kind:variable	line:270
+FAIL	../Harsha/coinClass.py	/^    FAIL = '\\033[91m'$/;"	kind:variable	line:269
+HEADER	../Harsha/coinClass.py	/^    HEADER = '\\033[95m'$/;"	kind:variable	line:265
+OKBLUE	../Harsha/coinClass.py	/^    OKBLUE = '\\033[94m'$/;"	kind:variable	line:266
+OKGREEN	../Harsha/coinClass.py	/^    OKGREEN = '\\033[92m'$/;"	kind:variable	line:267
+ORDER_UUID	../Harsha/bittrex_v2/tests/tests.py	/^    ORDER_UUID = ''$/;"	kind:variable	line:30
+PAIR	../Harsha/bittrex_v2/tests/tests.py	/^    PAIR = 'BTC-ETH'$/;"	kind:variable	line:26
+PRIVATE_COMMANDS	../Harsha/Bittrex.py	/^PRIVATE_COMMANDS = [$/;"	kind:variable	line:27
+PRIVATE_COMMANDS	../Harsha/bittrex_v2/bittrex.py	/^PRIVATE_COMMANDS = [$/;"	kind:variable	line:26
+PUBLIC_COMMANDS	../Harsha/Bittrex.py	/^PUBLIC_COMMANDS = [$/;"	kind:variable	line:17
+PUBLIC_COMMANDS	../Harsha/bittrex_v2/bittrex.py	/^PUBLIC_COMMANDS = [$/;"	kind:variable	line:16
+ReadTimeout	../Harsha/Bittrex.py	/^        from requests.exceptions import ReadTimeout, ConnectionError$/;"	kind:namespace	line:120
+ReadTimeout	../Harsha/bittrex_v2/bittrex.py	/^        from requests.exceptions import ReadTimeout, ConnectionError$/;"	kind:namespace	line:119
+SHOW_ENDPOINTS	../Harsha/bittrex_v2/tests/tests.py	/^    SHOW_ENDPOINTS = False$/;"	kind:variable	line:29
+TOKEN	../Harsha/coinClass.py	/^TOKEN = "477814364:AAGWlwRFp9LR77M8QmByyrhUeVBrSH4KW7w"$/;"	kind:variable	line:14
+TestPrivateBittrex	../Harsha/bittrex_v2/tests/tests.py	/^class TestPrivateBittrex(unittest.TestCase):$/;"	kind:class	line:228
+TestPublicBittrex	../Harsha/bittrex_v2/tests/tests.py	/^class TestPublicBittrex(unittest.TestCase):$/;"	kind:class	line:50
+UNDERLINE	../Harsha/coinClass.py	/^    UNDERLINE = '\\033[4m'$/;"	kind:variable	line:272
+WARNING	../Harsha/coinClass.py	/^    WARNING = '\\033[93m'$/;"	kind:variable	line:268
+__author__	../Harsha/bittrex_v2/__init__.py	/^__author__ = 'Álvaro Mondéjar Rubio <mondejar1994@gmail.com>'$/;"	kind:variable	line:6
+__call__	../Harsha/Bittrex.py	/^    def __call__(self, group, command, args={}):$/;"	kind:member	line:99
+__call__	../Harsha/bittrex_v2/bittrex.py	/^    def __call__(self, group, command, args={}):$/;"	kind:member	line:98
+__init__	../Harsha/Bittrex.py	/^    def __init__(self, api_key=None, api_secret=None, $/;"	kind:member	line:83
+__init__	../Harsha/Bittrex.py	/^    def __init__(self, err):$/;"	kind:member	line:50
+__init__	../Harsha/bittrex_v2/bittrex.py	/^    def __init__(self, api_key=None, api_secret=None, $/;"	kind:member	line:82
+__init__	../Harsha/bittrex_v2/bittrex.py	/^    def __init__(self, err):$/;"	kind:member	line:49
+__init__	../Harsha/bittrex_v2/tests/tests.py	/^    def __init__(self):$/;"	kind:member	line:32
+__init__	../Harsha/coinClass.py	/^    def __init__(self):$/;"	kind:member	line:33
+__init__	../Harsha/coinClass.py	/^    def __init__(self, name,db):$/;"	kind:member	line:95
+__init__	../Harsha/coinClass.py	/^    def __init__(self,coin,coinCollection):$/;"	kind:member	line:170
+__init__.py	../Harsha/bittrex_v2/__init__.py	1;"	kind:file	line:1
+__init__.py	../Harsha/bittrex_v2/tests/__init__.py	1;"	kind:file	line:1
+__license__	../Harsha/bittrex_v2/__init__.py	/^__license__ = 'BSD License'$/;"	kind:variable	line:8
+__repo__	../Harsha/bittrex_v2/__init__.py	/^__repo__    = 'https:\/\/github.com\/mondeja\/bittrex_v2'$/;"	kind:variable	line:7
+__title__	../Harsha/bittrex_v2/__init__.py	/^__title__   = 'bittrex_v2'$/;"	kind:variable	line:4
+__version__	../Harsha/bittrex_v2/__init__.py	/^__version__ = '1.0.1'$/;"	kind:variable	line:5
+_get	../Harsha/Bittrex.py	/^from requests import get as _get$/;"	kind:namespace	line:14
+_get	../Harsha/bittrex_v2/bittrex.py	/^from requests import get as _get$/;"	kind:namespace	line:13
+_loads	../Harsha/Bittrex.py	/^from json import loads as _loads$/;"	kind:namespace	line:8
+_loads	../Harsha/bittrex_v2/bittrex.py	/^from json import loads as _loads$/;"	kind:namespace	line:7
+_new	../Harsha/Bittrex.py	/^from hmac import new as _new$/;"	kind:namespace	line:9
+_new	../Harsha/bittrex_v2/bittrex.py	/^from hmac import new as _new$/;"	kind:namespace	line:8
+_sha512	../Harsha/Bittrex.py	/^from hashlib import sha512 as _sha512$/;"	kind:namespace	line:10
+_sha512	../Harsha/bittrex_v2/bittrex.py	/^from hashlib import sha512 as _sha512$/;"	kind:namespace	line:9
+_urlencode	../Harsha/Bittrex.py	/^from urllib.parse import urlencode as _urlencode$/;"	kind:namespace	line:6
+_urlencode	../Harsha/bittrex_v2/bittrex.py	/^from urllib.parse import urlencode as _urlencode$/;"	kind:namespace	line:5
+analyze	../Harsha/scanbot.py	/^            analyze = coinAnalyze(coin,coinCollection)$/;"	kind:variable	line:74
+ascendingMean	../Harsha/coinClass.py	/^    def ascendingMean(self,duration):$/;"	kind:member	line:218
+bcolors	../Harsha/coinClass.py	/^class bcolors:$/;"	kind:class	line:264
+bittrex.py	../Harsha/bittrex_v2/bittrex.py	1;"	kind:file	line:1
+bkey	../Harsha/coinClass.py	/^bkey = ""$/;"	kind:variable	line:10
+bot	../Harsha/coinClass.py	/^bot = telebot.TeleBot(TOKEN)$/;"	kind:variable	line:18
+bskey	../Harsha/coinClass.py	/^bskey= ""$/;"	kind:variable	line:11
+calChangeDict	../Harsha/coinClass.py	/^    calChangeDict = {"change1min":{"previous":0},"change2min":{"previous":0},"change5min":{"previous":0},"change30min":{"previous":0},"change60min":{"previous":0}}$/;"	kind:variable	line:168
+cancel	../Harsha/Bittrex.py	/^    def cancel(self, uuid):$/;"	kind:member	line:335
+cancel	../Harsha/bittrex_v2/bittrex.py	/^    def cancel(self, uuid):$/;"	kind:member	line:334
+change_1min	../Harsha/coinClass.py	/^    def change_1min(self):$/;"	kind:member	line:174
+change_2min	../Harsha/coinClass.py	/^    def change_2min(self):$/;"	kind:member	line:177
+change_30min	../Harsha/coinClass.py	/^    def change_30min(self):$/;"	kind:member	line:183
+change_5min	../Harsha/coinClass.py	/^    def change_5min(self):$/;"	kind:member	line:180
+change_60min	../Harsha/coinClass.py	/^    def change_60min(self):$/;"	kind:member	line:186
+coinAnalyze	../Harsha/coinClass.py	/^class coinAnalyze():$/;"	kind:class	line:166
 coinClass.py	../Harsha/coinClass.py	1;"	kind:file	line:1
 coinCollection	../Harsha/scanbot.py	/^coinCollection = {}$/;"	kind:variable	line:12
 coinList	../Harsha/scanbot.py	/^coinList = []$/;"	kind:variable	line:9
-coinThread	../Harsha/coinClass.py	/^class coinThread (threading.Thread):$/;"	kind:class	line:30
-collections	../Harsha/Bittrex.py	/^import collections$/;"	kind:namespace	line:30
-count	../Harsha/scanbot.py	/^        count = count +1$/;"	kind:variable	line:22
+coinThread	../Harsha/coinClass.py	/^class coinThread (threading.Thread):$/;"	kind:class	line:91
+collectionResults	../Harsha/coinClass.py	/^collectionResults = {"avg1res":[],"avg5res":[],"avg10res":[],"avg30res":[],"avg60res":[],"avg120res":[],"avg180res":[]}$/;"	kind:variable	line:26
+config	../Harsha/bittrex_v2/tests/tests.py	/^config = ConfigTest()$/;"	kind:variable	line:35
+count	../Harsha/scanbot.py	/^		count = count + 1$/;"	kind:variable	line:22
 count	../Harsha/scanbot.py	/^count = 0$/;"	kind:variable	line:18
 currencySummary	../Harsha/scanbot.py	/^currencySummary = testapi.get_market_summaries()$/;"	kind:variable	line:15
-datetime	../Harsha/Bittrex.py	/^import datetime$/;"	kind:namespace	line:24
-datetime	../Harsha/Bittrex.py	/^import time, datetime$/;"	kind:namespace	line:23
-depends	../Harsha/Bittrex.py	/^depends = ['requests', 'python-telegram-bot','pandas']$/;"	kind:variable	line:7
-do_print	../Harsha/coinClass.py	/^def do_print(value,num):$/;"	kind:function	line:177
-findChange	../Harsha/coinClass.py	/^    def findChange(self,duration):$/;"	kind:member	line:108
-get_balance	../Harsha/Bittrex.py	/^    def get_balance(self, currency):$/;"	kind:member	line:143
-get_balances	../Harsha/Bittrex.py	/^    def get_balances(self):$/;"	kind:member	line:140
-get_change	../Harsha/coinClass.py	/^def get_change(current, previous):$/;"	kind:function	line:191
-get_change	../Harsha/coinClass.py	/^def get_change(current, previous):$/;"	kind:function	line:69
-get_currencies	../Harsha/Bittrex.py	/^    def get_currencies(self):$/;"	kind:member	line:101
-get_deposit_address	../Harsha/Bittrex.py	/^    def get_deposit_address(self, currency):$/;"	kind:member	line:146
-get_deposit_history	../Harsha/Bittrex.py	/^    def get_deposit_history(self, currency=""):$/;"	kind:member	line:152
-get_market_history	../Harsha/Bittrex.py	/^    def get_market_history(self, market, count):$/;"	kind:member	line:116
-get_market_summaries	../Harsha/Bittrex.py	/^    def get_market_summaries(self):$/;"	kind:member	line:107
-get_market_summary	../Harsha/Bittrex.py	/^    def get_market_summary(self, market):$/;"	kind:member	line:110
-get_markets	../Harsha/Bittrex.py	/^    def get_markets(self):$/;"	kind:member	line:98
-get_open_orders	../Harsha/Bittrex.py	/^    def get_open_orders(self):$/;"	kind:member	line:137
-get_open_orders	../Harsha/Bittrex.py	/^    def get_open_orders(self, market):$/;"	kind:member	line:134
-get_order	../Harsha/Bittrex.py	/^    def get_order(self, uuid):$/;"	kind:member	line:149
-get_order_history	../Harsha/Bittrex.py	/^    def get_order_history(self, market = ""):$/;"	kind:member	line:164
-get_orderbook	../Harsha/Bittrex.py	/^    def get_orderbook(self, market, depth_type, depth=20):$/;"	kind:member	line:113
-get_ticker	../Harsha/Bittrex.py	/^    def get_ticker(self, market):$/;"	kind:member	line:104
-get_withdrawal_history	../Harsha/Bittrex.py	/^    def get_withdrawal_history(self, currency=""):$/;"	kind:member	line:158
-hashlib	../Harsha/Bittrex.py	/^import hmac, hashlib$/;"	kind:namespace	line:26
-hmac	../Harsha/Bittrex.py	/^import hmac, hashlib$/;"	kind:namespace	line:26
-httplib	../Harsha/Bittrex.py	/^import httplib$/;"	kind:namespace	line:27
-imp	../Harsha/Bittrex.py	/^import imp, pip$/;"	kind:namespace	line:3
-install	../Harsha/Bittrex.py	/^def install(package):$/;"	kind:function	line:4
-json	../Harsha/Bittrex.py	/^import json$/;"	kind:namespace	line:22
-market	../Harsha/scanbot.py	/^    market = '{0}{1}'.format(coin, '_col')$/;"	kind:variable	line:26
+datetime	../Harsha/bittrex_v2/tests/tests.py	/^from datetime import datetime$/;"	kind:namespace	line:7
+do_print	../Harsha/coinClass.py	/^def do_print(value,num):$/;"	kind:function	line:274
+echo_all	../Harsha/coinClass.py	/^        def echo_all(message):$/;"	kind:function	line:72
+findChange	../Harsha/coinClass.py	/^    def findChange(self,duration):$/;"	kind:member	line:189
+generate_deposit_address	../Harsha/Bittrex.py	/^    def generate_deposit_address(self, currency):$/;"	kind:member	line:466
+generate_deposit_address	../Harsha/bittrex_v2/bittrex.py	/^    def generate_deposit_address(self, currency):$/;"	kind:member	line:465
+get_balance	../Harsha/Bittrex.py	/^    def get_balance(self, currency=None):$/;"	kind:member	line:318
+get_balance	../Harsha/bittrex_v2/bittrex.py	/^    def get_balance(self, currency=None):$/;"	kind:member	line:317
+get_change	../Harsha/coinClass.py	/^def get_change(current, previous):$/;"	kind:function	line:153
+get_change	../Harsha/coinClass.py	/^def get_change(current, previous):$/;"	kind:function	line:288
+get_currencies	../Harsha/Bittrex.py	/^    def get_currencies(self):$/;"	kind:member	line:213
+get_currencies	../Harsha/bittrex_v2/bittrex.py	/^    def get_currencies(self):$/;"	kind:member	line:212
+get_deposit_address	../Harsha/Bittrex.py	/^    def get_deposit_address(self, currency):$/;"	kind:member	line:453
+get_deposit_address	../Harsha/bittrex_v2/bittrex.py	/^    def get_deposit_address(self, currency):$/;"	kind:member	line:452
+get_deposit_history	../Harsha/Bittrex.py	/^    def get_deposit_history(self, currency=None):$/;"	kind:member	line:419
+get_deposit_history	../Harsha/bittrex_v2/bittrex.py	/^    def get_deposit_history(self, currency=None):$/;"	kind:member	line:418
+get_market_orderbook	../Harsha/Bittrex.py	/^    def get_market_orderbook(self, market):$/;"	kind:member	line:239
+get_market_orderbook	../Harsha/bittrex_v2/bittrex.py	/^    def get_market_orderbook(self, market):$/;"	kind:member	line:238
+get_market_summaries	../Harsha/Bittrex.py	/^    def get_market_summaries(self):$/;"	kind:member	line:201
+get_market_summaries	../Harsha/bittrex_v2/bittrex.py	/^    def get_market_summaries(self):$/;"	kind:member	line:200
+get_market_summary	../Harsha/Bittrex.py	/^    def get_market_summary(self, market):$/;"	kind:member	line:186
+get_market_summary	../Harsha/bittrex_v2/bittrex.py	/^    def get_market_summary(self, market):$/;"	kind:member	line:185
+get_markets	../Harsha/Bittrex.py	/^    def get_markets(self):$/;"	kind:member	line:174
+get_markets	../Harsha/bittrex_v2/bittrex.py	/^    def get_markets(self):$/;"	kind:member	line:173
+get_open_orders	../Harsha/Bittrex.py	/^    def get_open_orders(self, market=None):$/;"	kind:member	line:292
+get_open_orders	../Harsha/bittrex_v2/bittrex.py	/^    def get_open_orders(self, market=None):$/;"	kind:member	line:291
+get_order	../Harsha/Bittrex.py	/^    def get_order(self, uuid):$/;"	kind:member	line:279
+get_order	../Harsha/bittrex_v2/bittrex.py	/^    def get_order(self, uuid):$/;"	kind:member	line:278
+get_order_history	../Harsha/Bittrex.py	/^    def get_order_history(self):$/;"	kind:member	line:309
+get_order_history	../Harsha/bittrex_v2/bittrex.py	/^    def get_order_history(self):$/;"	kind:member	line:308
+get_pending_deposits	../Harsha/Bittrex.py	/^    def get_pending_deposits(self, currency=None):$/;"	kind:member	line:436
+get_pending_deposits	../Harsha/bittrex_v2/bittrex.py	/^    def get_pending_deposits(self, currency=None):$/;"	kind:member	line:435
+get_ticks	../Harsha/Bittrex.py	/^    def get_ticks(self, market, period):$/;"	kind:member	line:254
+get_ticks	../Harsha/bittrex_v2/bittrex.py	/^    def get_ticks(self, market, period):$/;"	kind:member	line:253
+get_wallet_health	../Harsha/Bittrex.py	/^    def get_wallet_health(self):$/;"	kind:member	line:225
+get_wallet_health	../Harsha/bittrex_v2/bittrex.py	/^    def get_wallet_health(self):$/;"	kind:member	line:224
+get_withdrawal_history	../Harsha/Bittrex.py	/^    def get_withdrawal_history(self, currency=None):$/;"	kind:member	line:402
+get_withdrawal_history	../Harsha/bittrex_v2/bittrex.py	/^    def get_withdrawal_history(self, currency=None):$/;"	kind:member	line:401
+json	../Harsha/bittrex_v2/tests/tests.py	/^        import json$/;"	kind:namespace	line:236
+market	../Harsha/scanbot.py	/^    market = '{0}{1}'.format(coin, '_col')$/;"	kind:variable	line:27
+nonce	../Harsha/Bittrex.py	/^    def nonce(self):$/;"	kind:member	line:95
+nonce	../Harsha/bittrex_v2/bittrex.py	/^    def nonce(self):$/;"	kind:member	line:94
 np	../Harsha/coinClass.py	/^import numpy as np$/;"	kind:namespace	line:2
-os	../Harsha/Bittrex.py	/^import os$/;"	kind:namespace	line:17
-pd	../Harsha/Bittrex.py	/^import pandas as pd$/;"	kind:namespace	line:32
-pip	../Harsha/Bittrex.py	/^import imp, pip$/;"	kind:namespace	line:3
-requests	../Harsha/Bittrex.py	/^import requests$/;"	kind:namespace	line:28
-run	../Harsha/coinClass.py	/^   def run(self):$/;"	kind:member	line:36
+place_order	../Harsha/Bittrex.py	/^    def place_order(self, tradetype, market, amount, rate,$/;"	kind:member	line:375
+place_order	../Harsha/bittrex_v2/bittrex.py	/^    def place_order(self, tradetype, market, amount, rate,$/;"	kind:member	line:374
+records	../Harsha/coinClass.py	/^records = 0$/;"	kind:variable	line:20
+run	../Harsha/coinClass.py	/^    def run(self):$/;"	kind:member	line:100
+run	../Harsha/coinClass.py	/^    def run(self):$/;"	kind:member	line:36
 scanbot.py	../Harsha/scanbot.py	1;"	kind:file	line:1
-sell_limit	../Harsha/Bittrex.py	/^    def sell_limit(self, market, quantity, rate):$/;"	kind:member	line:128
-sell_market	../Harsha/Bittrex.py	/^    def sell_market(self, market, quantity, rate):$/;"	kind:member	line:125
-signal	../Harsha/Bittrex.py	/^import signal$/;"	kind:namespace	line:31
-sys	../Harsha/Bittrex.py	/^import sys$/;"	kind:namespace	line:19
-tName	../Harsha/Bittrex.py	/^import pandas as tName$/;"	kind:namespace	line:29
-telegram	../Harsha/Bittrex.py	/^import telegram$/;"	kind:namespace	line:20
-testapi	../Harsha/coinClass.py	/^testapi = Bittrex(bkey, bskey)$/;"	kind:variable	line:20
-thread	../Harsha/scanbot.py	/^	thread = coinThread(coin,coinCollection['{0}{1}'.format(coin, '_col')])$/;"	kind:variable	line:31
-threading	../Harsha/Bittrex.py	/^import threading$/;"	kind:namespace	line:16
-time	../Harsha/Bittrex.py	/^import time$/;"	kind:namespace	line:21
-time	../Harsha/Bittrex.py	/^import time, datetime$/;"	kind:namespace	line:23
-urlencode	../Harsha/Bittrex.py	/^    from urllib import urlencode$/;"	kind:namespace	line:41
-urlencode	../Harsha/Bittrex.py	/^    from urllib.parse import urlencode$/;"	kind:namespace	line:37
-urlopen	../Harsha/Bittrex.py	/^    from urllib.request import urlopen, Request$/;"	kind:namespace	line:36
-urlopen	../Harsha/Bittrex.py	/^    from urllib2 import Request, urlopen, URLError, HTTPError$/;"	kind:namespace	line:40
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:40
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:44
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:48
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:52
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:56
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:60
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:64
+send_welcome	../Harsha/coinClass.py	/^        def send_welcome(message):$/;"	kind:function	line:68
+setUp	../Harsha/bittrex_v2/tests/tests.py	/^    def setUp(self):$/;"	kind:member	line:235
+setUp	../Harsha/bittrex_v2/tests/tests.py	/^    def setUp(self):$/;"	kind:member	line:55
+sleep	../Harsha/Bittrex.py	/^from time import time, sleep$/;"	kind:namespace	line:11
+sleep	../Harsha/bittrex_v2/bittrex.py	/^from time import time, sleep$/;"	kind:namespace	line:10
+tcounter	../Harsha/coinClass.py	/^    tcounter = 0$/;"	kind:variable	line:93
+telebot	../Harsha/coinClass.py	/^import telebot$/;"	kind:namespace	line:3
+telegramThread	../Harsha/coinClass.py	/^class telegramThread (threading.Thread):$/;"	kind:class	line:32
+test	../Harsha/bittrex_v2/tests/tests.py	/^        def test(call):$/;"	kind:function	line:435
+test	../Harsha/bittrex_v2/tests/tests.py	/^        def test(call):$/;"	kind:function	line:463
+test_generate_deposit_address	../Harsha/bittrex_v2/tests/tests.py	/^    def test_generate_deposit_address(self):$/;"	kind:member	line:497
+test_get_balance	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_balance(self):$/;"	kind:member	line:355
+test_get_currencies	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_currencies(self):$/;"	kind:member	line:148
+test_get_deposit_address	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_deposit_address(self):$/;"	kind:member	line:490
+test_get_deposit_history	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_deposit_history(self):$/;"	kind:member	line:462
+test_get_market_orderbook	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_market_orderbook(self):$/;"	kind:member	line:200
+test_get_market_summaries	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_market_summaries(self):$/;"	kind:member	line:106
+test_get_market_summary	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_market_summary(self):$/;"	kind:member	line:85
+test_get_markets	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_markets(self):$/;"	kind:member	line:64
+test_get_open_orders	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_open_orders(self):$/;"	kind:member	line:246
+test_get_order	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_order(self):$/;"	kind:member	line:282
+test_get_order_history	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_order_history(self):$/;"	kind:member	line:327
+test_get_pending_deposits	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_pending_deposits(self):$/;"	kind:member	line:486
+test_get_ticks	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_ticks(self):$/;"	kind:member	line:212
+test_get_wallet_health	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_wallet_health(self):$/;"	kind:member	line:170
+test_get_withdrawal_history	../Harsha/bittrex_v2/tests/tests.py	/^    def test_get_withdrawal_history(self):$/;"	kind:member	line:434
+test_invalid_command	../Harsha/bittrex_v2/tests/tests.py	/^    def test_invalid_command(self):$/;"	kind:member	line:60
+test_result	../Harsha/bittrex_v2/tests/tests.py	/^def test_result(self, ret, result_type=list):$/;"	kind:function	line:42
+testapi	../Harsha/coinClass.py	/^testapi = Bittrex(api_key=bkey, api_secret=bskey)$/;"	kind:variable	line:17
+tests.py	../Harsha/bittrex_v2/tests/tests.py	1;"	kind:file	line:1
+thread	../Harsha/scanbot.py	/^	thread = coinThread(coin,coinCollection['{0}{1}'.format(coin, '_col')])$/;"	kind:variable	line:32
+thread	../Harsha/scanbot.py	/^thread = telegramThread()$/;"	kind:variable	line:39
+threading	../Harsha/coinClass.py	/^import threading$/;"	kind:namespace	line:4
+time	../Harsha/Bittrex.py	/^from time import time, sleep$/;"	kind:namespace	line:11
+time	../Harsha/bittrex_v2/bittrex.py	/^from time import time, sleep$/;"	kind:namespace	line:10
+unittest	../Harsha/bittrex_v2/tests/tests.py	/^import unittest$/;"	kind:namespace	line:4
+withdraw	../Harsha/Bittrex.py	/^    def withdraw(self, currency, amount, address):$/;"	kind:member	line:356
+withdraw	../Harsha/bittrex_v2/bittrex.py	/^    def withdraw(self, currency, amount, address):$/;"	kind:member	line:355

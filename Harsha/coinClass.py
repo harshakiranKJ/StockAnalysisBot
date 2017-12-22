@@ -1,5 +1,9 @@
 from Bittrex import *
 import numpy as np
+import telebot
+import threading
+import time
+import pandas as pd
 
 ###########################################################
 # Global Initializations
@@ -8,16 +12,84 @@ import numpy as np
 bkey = ""
 bskey= ""
 
-TG_ID = ""
-
 # put in the telegram bot token from @BotFather
-TG_BOT_TOKEN = ""
-
-
+TOKEN = "477814364:AAGWlwRFp9LR77M8QmByyrhUeVBrSH4KW7w"
 
 #initialize the telegram BOT and Bittrex
-testapi = Bittrex(bkey, bskey)
-bot = telegram.Bot(token=TG_BOT_TOKEN)
+testapi = Bittrex(api_key=bkey, api_secret=bskey)
+bot = telebot.TeleBot(TOKEN)
+
+records = 0
+
+###########################################################
+# Global Analysis results and thread to clear
+###########################################################
+
+collectionResults = {"avg1res":[],"avg5res":[],"avg10res":[],"avg30res":[],"avg60res":[],"avg120res":[],"avg180res":[],"avg600res":[],"avg1440res":[]}
+
+###########################################################
+# Telegram Thread
+###########################################################
+
+class telegramThread (threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+
+    def run(self):
+        print ("starting telegram thread")
+
+        @bot.message_handler(commands=['avg1'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg1res']))
+
+        @bot.message_handler(commands=['avg5'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg5res']))
+
+        @bot.message_handler(commands=['avg10'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg10res']))
+
+        @bot.message_handler(commands=['avg30'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg30res']))
+
+        @bot.message_handler(commands=['avg60'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg60res']))
+
+        @bot.message_handler(commands=['avg120'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg120res']))
+
+        @bot.message_handler(commands=['avg180'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg180res']))
+
+        @bot.message_handler(commands=['avg600'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg600res']))
+
+        @bot.message_handler(commands=['avg1440'])
+        def send_welcome(message):
+            bot.reply_to(message, " ".join(str(x) for x in collectionResults['avg1440res']))
+
+        @bot.message_handler(commands=['rec'])
+        def send_welcome(message):
+            bot.reply_to(message, records)
+
+        @bot.message_handler(func=lambda message: True)
+        def echo_all(message):
+            bot.reply_to(message, "Please check commands Eg: avg[1, 5,10,30,60,120,180,600,1440]")
+
+        while (True):
+    
+            try:
+                bot.polling(none_stop=True)
+
+            except Exception as e:
+                time.sleep(15)
+
 
 
 ###########################################################
@@ -27,15 +99,19 @@ bot = telegram.Bot(token=TG_BOT_TOKEN)
 ###########################################################
 
 class coinThread (threading.Thread):
-   def __init__(self, name,db):
+    
+    tcounter = 0
+
+    def __init__(self, name,db):
       threading.Thread.__init__(self)
       self.name = name
       self.db = db
 
-   def run(self):
+    def run(self):
         try:
+            #print ("starting Collection thread")
             while (True):
-                                # Create local storage for recursive data
+                # Create local storage for recursive data
                 localCollection = []
 
                 start = time.time()
@@ -43,21 +119,22 @@ class coinThread (threading.Thread):
                 scounter = 0
                 fcounter = 0
                 while (time.time() < stop):
-                    #print "Thread COLLECTION START Time: " + str(time.ctime())
+                    #print ("Thread COLLECTION START Time: " + str(time.ctime()))
                     data = testapi.get_market_summary(self.name)
+                    
                     if (data['success'] == True):
-                        localCollection.append(data['result'][0])
+                        localCollection.append(data['result'])
                         scounter = scounter +1
                     else:
                         fcounter = fcounter +1
                     
-                    #print "coin : " + self.name
-                    #print "now time : " +str(time.time())
-                    #print "stop time: " + str(stop)  
+                    #print ("coin : " + self.name)
+                    #print ("now time : " +str(time.time()))
+                    #print ("stop time: " + str(stop))
                     time.sleep(10)
 
-               # print "scounter : " + str(scounter)
-               # print "fcounter : " + str(fcounter)
+                #print ("scounter : "  str(scounter))
+                #print "fcounter : " + str(fcounter)
 
                 #calculate average of each value based on the counter
                 coldata = pd.DataFrame.from_dict(localCollection) 
@@ -68,9 +145,13 @@ class coinThread (threading.Thread):
                 self.db.appendleft(coldata)
                 #print "Thread COLLECTION STOP Time: " + str(time.ctime())
                 deltasleep = time.time() - start
-                time.sleep(60 - deltasleep)
+                self.tcounter = self.tcounter + 1
+                print ("database increment: " + str(self.tcounter))
+                records = self.tcounter
+                print ("number of records:" + str())
+                time.sleep(abs(60 - deltasleep))
         except KeyboardInterrupt:
-            print "ctrl+ c pressed"
+            print ("ctrl+ c pressed")
             threading.Thread._Thread_stop()
 
 
@@ -89,9 +170,6 @@ def get_change(current, previous):
     except ZeroDivisionError:
         return 0
 
-
-
-
 ###########################################################
 # Analysis Class to get the data contiously every minute
 # @coin : name of the coin 
@@ -108,17 +186,29 @@ class coinAnalyze():
     def change_1min(self):
         self.findChange(1)
 
-    def change_2min(self):
-        self.findChange(2)
-
     def change_5min(self):
         self.findChange(5)
+        
+    def change_5min(self):
+        self.findChange(10)
     
     def change_30min(self):
         self.findChange(30)
 
     def change_60min(self):
         self.findChange(60)
+        
+    def change_60min(self):
+        self.findChange(120)
+        
+    def change_60min(self):
+        self.findChange(180)
+        
+    def change_60min(self):
+        self.findChange(600)
+        
+    def change_60min(self):
+        self.findChange(1440)
     
     def findChange(self,duration):
         try:
@@ -141,26 +231,27 @@ class coinAnalyze():
             # Report if % change is more than 2BTC
             if change > 2:
                 bot.send_message(chat_id=TG_ID, text="<b>BITTREX: </b>"+' '.join(self.coin + " volume increased by" +  str(change) + " BTC in : " + str(duration) + "minutes"), parse_mode=telegram.ParseMode.HTML)
-                print "Coin: "+ self.coin + "BTC volume increased by"+ str(change)+" BTC in : " + str(duration) + "minutes"
+                print ("Coin: "+ self.coin + "BTC volume increased by"+ str(change)+" BTC in : " + str(duration) + "minutes")
             if change < -2:
                 bot.send_message(chat_id=TG_ID, text="<b>BITTREX: </b>"+' '.join(self.coin + " volume decreased by" +  str(change) + " BTC in : " + str(duration) + "minutes"), parse_mode=telegram.ParseMode.HTML)
 
         except KeyboardInterrupt:
-                print "ctrl+ c pressed"
+                print ("ctrl+ c pressed")
                 exit(0)
 
     def ascendingMean(self,duration):
         try:
 
-            #print "Thread ANALYZE start Time: " + str(time.ctime())
+            print ("Thread ANALYZE start Time: " + str(time.ctime()))
 
             #format and fetch Data
             market = '{0}{1}'.format(self.coin, '_col')             # Get the coin (BTC-XRP)
             val = self.coinCollection[market]                       # Get the required database
             data = [elem for elem in val if elem !=0]               # format to remove zeros
-            #print data
-            if (len(data) <= 3 * duration):                             # return if not enough data is available
-                print "Not enough data!!" + str(duration)
+            print (data)
+            print ("Data in Analysis threads" + str(len(data)))
+            if (len(data) < 3 * duration):                             # return if not enough data is available
+                #print "Not enough data!!" + str(duration)
                 return
             coldata = pd.DataFrame.from_dict(data)                  # Store the data in a python pandas dataframe
 
@@ -174,12 +265,17 @@ class coinAnalyze():
             #print "mean1: " + str(mean1)
             #print val
 
+            # clear the previous data so it wont accumilate
+            #del collectionResults['avg{0}res'.format(duration)][:]
+
             if ((mean1 > mean2) and (mean2 > mean3)):
-                print "BUY SIGNAL " + market
-                bot.send_message(chat_id=TG_ID, text="<b>BITTREX: BUY SIGNAL</b>"+' '.join(self.coin + " mean increased by"  + str(duration) + "minutes"), parse_mode=telegram.ParseMode.HTML)
+                if self.coin in collectionResults['avg{0}res'.format(duration)]:
+                    return
+                else:
+                    collectionResults['avg{0}res'.format(duration)].append(self.coin)
 
         except KeyboardInterrupt:
-                print "ctrl+ c pressed"
+                print ("ctrl+ c pressed")
                 exit(0)
 
 
@@ -201,16 +297,16 @@ class bcolors:
     
 def do_print(value,num):
     if num ==1:
-        print "\n\n\n***********************",value,"***************************\n"
+        print ("\n\n\n***********************",value,"***************************\n")
     if num == 2:
-        print "\n***********************",value,"***************************\n\n"
+        print ("\n***********************",value,"***************************\n\n")
     if num==3:
         if value['success'] == True:
-            print bcolors.OKGREEN + "SUCCESS" + bcolors.ENDC
-            print bcolors.OKGREEN + str(value) + bcolors.ENDC
+            print (bcolors.OKGREEN + "SUCCESS" + bcolors.ENDC)
+            print (bcolors.OKGREEN + str(value) + bcolors.ENDC)
         else:
-            print bcolors.FAIL + "FAILED" + bcolors.ENDC
-            print bcolors.FAIL + str(value) + bcolors.ENDC
+            print (bcolors.FAIL + "FAILED" + bcolors.ENDC)
+            print (bcolors.FAIL + str(value) + bcolors.ENDC)
 
 # run multithreads for the count of number of currencies
 def get_change(current, previous):
